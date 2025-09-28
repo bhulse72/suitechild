@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>ER Diagram - Stage 1</title>
+      <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+      <div class="container" id="bsr-wrapper">
+         <h1>ER Diagram</h1>
+            <img src="./Project.JPEG" alt="ER Diagram Picture">         
+         <h2>Variable Meanings</h2>
+            <h3>Status Number:</h3> 
+             <p>  0.  Order needs to be placed/reviewed by buying team</p> 
+             <p>  1.  Order under review - In progress or Priority</p> 
+             <p>  2.  Something is preventing the order from being confirmed</p> 
+             <p>  3.  Vendor has confirmed the order</p> 
+             <p>        - flags the inventory team to get involved</p> 
+             <p>  4.  Order is on backorder</p> 
+             <p>  5.  Order physically arrives at one of the stores (ELK or KEA)</p> 
+             <p>  6.  There is a discrepancy in the order</p> 
+             <p>  7.  Order is confirmed and received with no outstanding discrepancies</p> 
+             <p>  8.  Inventory team has reconciled the order – everything matches in POS </p> 
+         
+         <h3>   Status Codes:</h3> 
+         <p>       Purple: high priority</p> 
+         <p>       Orange: needs purchaser attention</p> 
+         <p>       Pink: high priority creation : still need a digital PO (internal ID#)</p> 
+         <p>       Yellow: needs CS approval</p> 
+         <p>       Red: Needs Inventory Ops Team attention</p> 
+         <p>       Green: ready to receive</p> 
+         <h2>Team Roles</h2>
+         <h3>Admin:</h3>
+            <p>assumes all responsibilities of other teams ; manages other teams ; an see all data </p>
+        <h3>General Employee:</h3>
+            <p>Notifies the Buying team that they are running low on a product or there is high demand</p>
+        <h3>Buying Team:</h3>
+            <p>Gets a notification that order needs to be placed ; enters a new order - brand name and statues = 0  ONLY ; Reviews all status 0 line items ; if it needs ordered, based on vendor relationships, budget, and timing → set the status to “1” ; Contacts vendor ; and places the order; fills in order details, prices, notes, ship date, discounts, collections, etc ; Once vendor confirms the order, buying team changes the status from a “1” or “2” to a “3”</p>
+        <h3>Inventory Team: </h3>
+            <p>gets involved once the order status is set to a “3” ; Reviews all items with the “3” status ; creates the product digitally in POS ; creates purchase number (Heartland PO#) ; Updates code (pink or green) ; Once order is “5” and green → begin receiving process ; flags and tracks backorders ; reconciles orders ; resolve discrepancies</p>
+        <h3>Sales Team:</h3>
+            <p>Marks orders as a “5” when order arrives in store ; Notices and marks discrepancies (“6”) ; Marks orders as “7” when correct</p>
+      </div>
+   </body>
+</html>
